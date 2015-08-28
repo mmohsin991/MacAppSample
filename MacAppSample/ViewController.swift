@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import Quartz
+
 
 class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource, EDStarRatingProtocol {
 
@@ -125,7 +127,18 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         self.bugsTableView.reloadDataForRowIndexes(indexSet, columnIndexes: columnSet)
     }
     
-    
+    func pictureTakerDidEnd(picker: IKPictureTaker, returnCode: NSInteger, contextInfo: UnsafePointer<Void>) {
+        let image = picker.outputImage()
+        
+        if image != nil && returnCode == NSModalResponseOK {
+            self.bugImageView.image = image
+            if let selectedDoc = selectedBugDoc() {
+                selectedDoc.fullImage = image
+                selectedDoc.thumbImage = image.imageByScalingAndCroppingForSize(CGSize(width: 44, height: 44))
+                reloadSelectedBugRow()
+            }
+        }
+    }
     
     
     @IBAction func addBug(sender: NSButton) {
@@ -161,8 +174,17 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     
     @IBAction func bugTitleDidEndEdit(sender: NSTextField) {
         if let selectedDoc = selectedBugDoc() {
-            selectedDoc.data.title = self.tstBugTitle.stringValue
+            selectedDoc.data.title = self.txtBugTitle.stringValue
             reloadSelectedBugRow()
+        }
+    }
+    
+    @IBAction func changePicture(sender: NSButton) {
+        if let selectedDoc = selectedBugDoc() {
+            IKPictureTaker().beginPictureTakerSheetForWindow(self.view.window,
+                withDelegate: self,
+                didEndSelector: "pictureTakerDidEnd:returnCode:contextInfo:",
+                contextInfo: nil)
         }
     }
 }
