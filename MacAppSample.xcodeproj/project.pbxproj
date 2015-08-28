@@ -14,6 +14,8 @@
 		42FAC81C1B906AC100C2E75B /* MacAppSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAC81B1B906AC100C2E75B /* MacAppSampleTests.swift */; };
 		42FAC8261B906B3B00C2E75B /* ScaryBugData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAC8251B906B3B00C2E75B /* ScaryBugData.swift */; };
 		42FAC8281B906B4F00C2E75B /* ScaryBugDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAC8271B906B4F00C2E75B /* ScaryBugDoc.swift */; };
+		42FAC82F1B90704500C2E75B /* EDStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FAC82C1B90704500C2E75B /* EDStarRating.m */; };
+		42FAC8301B90704500C2E75B /* NSImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FAC82E1B90704500C2E75B /* NSImage+Extras.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,11 @@
 		42FAC81B1B906AC100C2E75B /* MacAppSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAppSampleTests.swift; sourceTree = "<group>"; };
 		42FAC8251B906B3B00C2E75B /* ScaryBugData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaryBugData.swift; sourceTree = "<group>"; };
 		42FAC8271B906B4F00C2E75B /* ScaryBugDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaryBugDoc.swift; sourceTree = "<group>"; };
+		42FAC82A1B90704500C2E75B /* MacAppSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacAppSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		42FAC82B1B90704500C2E75B /* EDStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDStarRating.h; sourceTree = "<group>"; };
+		42FAC82C1B90704500C2E75B /* EDStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDStarRating.m; sourceTree = "<group>"; };
+		42FAC82D1B90704500C2E75B /* NSImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Extras.h"; sourceTree = "<group>"; };
+		42FAC82E1B90704500C2E75B /* NSImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Extras.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +86,12 @@
 		42FAC8051B906AC100C2E75B /* MacAppSample */ = {
 			isa = PBXGroup;
 			children = (
+				42FAC8291B90703500C2E75B /* ExtraFiles */,
 				42FAC8081B906AC100C2E75B /* AppDelegate.swift */,
 				42FAC8251B906B3B00C2E75B /* ScaryBugData.swift */,
 				42FAC8271B906B4F00C2E75B /* ScaryBugDoc.swift */,
 				42FAC80A1B906AC100C2E75B /* ViewController.swift */,
+				42FAC82A1B90704500C2E75B /* MacAppSample-Bridging-Header.h */,
 				42FAC80C1B906AC100C2E75B /* Images.xcassets */,
 				42FAC80E1B906AC100C2E75B /* Main.storyboard */,
 				42FAC8061B906AC100C2E75B /* Supporting Files */,
@@ -113,6 +122,17 @@
 				42FAC81A1B906AC100C2E75B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42FAC8291B90703500C2E75B /* ExtraFiles */ = {
+			isa = PBXGroup;
+			children = (
+				42FAC82B1B90704500C2E75B /* EDStarRating.h */,
+				42FAC82C1B90704500C2E75B /* EDStarRating.m */,
+				42FAC82D1B90704500C2E75B /* NSImage+Extras.h */,
+				42FAC82E1B90704500C2E75B /* NSImage+Extras.m */,
+			);
+			name = ExtraFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,8 +237,10 @@
 			files = (
 				42FAC8261B906B3B00C2E75B /* ScaryBugData.swift in Sources */,
 				42FAC80B1B906AC100C2E75B /* ViewController.swift in Sources */,
+				42FAC82F1B90704500C2E75B /* EDStarRating.m in Sources */,
 				42FAC8281B906B4F00C2E75B /* ScaryBugDoc.swift in Sources */,
 				42FAC8091B906AC100C2E75B /* AppDelegate.swift in Sources */,
+				42FAC8301B90704500C2E75B /* NSImage+Extras.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,10 +358,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MacAppSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MacAppSample/MacAppSample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -347,10 +372,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MacAppSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MacAppSample/MacAppSample-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -409,6 +436,7 @@
 				42FAC8211B906AC100C2E75B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42FAC8221B906AC100C2E75B /* Build configuration list for PBXNativeTarget "MacAppSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +445,7 @@
 				42FAC8241B906AC100C2E75B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
