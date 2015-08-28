@@ -10,7 +10,7 @@ import Cocoa
 import Quartz
 
 
-class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource, EDStarRatingProtocol {
+class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource, EDStarRatingProtocol{
 
     
     var bugs = [ScaryBugDoc]()
@@ -19,13 +19,13 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     @IBOutlet weak var txtBugTitle: NSTextField!
     @IBOutlet weak var bugImageView: NSImageView!
     @IBOutlet weak var bugRating: EDStarRating!
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
         self.setupSampleBugs()
+        
 
         self.bugRatingInit()
     }
@@ -90,6 +90,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         self.bugRating.displayMode = UInt(EDStarRatingDisplayFull)
         
         self.bugRating.rating = Float(0.0)
+
     }
     
     
@@ -125,7 +126,9 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         let indexSet = NSIndexSet(index: self.bugsTableView.selectedRow)
         let columnSet = NSIndexSet(index: 0)
         self.bugsTableView.reloadDataForRowIndexes(indexSet, columnIndexes: columnSet)
+        
     }
+    
     
     func pictureTakerDidEnd(picker: IKPictureTaker, returnCode: NSInteger, contextInfo: UnsafePointer<Void>) {
         let image = picker.outputImage()

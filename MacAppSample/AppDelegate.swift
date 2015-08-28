@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 Mohsin. All rights reserved.
 //
 
+
+// NSOpenPanel to open files and dir
+// https://developer.apple.com/library/mac/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/UsingtheOpenandSavePanels/UsingtheOpenandSavePanels.html
+
 import Cocoa
 
 @NSApplicationMain
