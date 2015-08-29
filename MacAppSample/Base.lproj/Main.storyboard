@@ -794,8 +794,12 @@
                                     <action selector="deleteBug:" target="XfG-lQ-9wD" id="JFr-lg-igR"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6d5-Lw-jj4">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6d5-Lw-jj4">
                                 <rect key="frame" x="313" y="13" width="146" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Nwq-mB-a77"/>
+                                    <constraint firstAttribute="width" constant="134" id="wNU-5M-m4s"/>
+                                </constraints>
                                 <buttonCell key="cell" type="push" title="Change Picture" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sh3-OG-nIg">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -816,8 +820,10 @@
                             <constraint firstItem="YVz-RB-0oo" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="47Y-yZ-nAm"/>
                             <constraint firstItem="jaA-Vd-9Cs" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="149" id="7nr-xG-890"/>
                             <constraint firstAttribute="bottom" secondItem="jaA-Vd-9Cs" secondAttribute="bottom" constant="46" id="PIc-r0-Dux"/>
+                            <constraint firstAttribute="bottom" secondItem="6d5-Lw-jj4" secondAttribute="bottom" constant="20" id="Wp0-s9-EPz"/>
                             <constraint firstItem="YVz-RB-0oo" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="268" id="ckA-dB-7qS"/>
                             <constraint firstItem="jaA-Vd-9Cs" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="299" id="oPx-NF-n0T"/>
+                            <constraint firstAttribute="centerX" secondItem="6d5-Lw-jj4" secondAttribute="centerX" constant="-126" id="oaI-Xx-jCx"/>
                             <constraint firstAttribute="trailing" secondItem="jaA-Vd-9Cs" secondAttribute="trailing" constant="47" id="zfb-s4-mhn"/>
                         </constraints>
                     </view>

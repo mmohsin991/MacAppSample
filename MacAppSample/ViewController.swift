@@ -22,6 +22,11 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let menu = NSApplication.sharedApplication().mainMenu {
+            println(menu)
+        }
+        
         // Do any additional setup after loading the view.
 
         self.setupSampleBugs()
